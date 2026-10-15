@@ -88,9 +88,9 @@ export const PIECE_TEMPLATES: PieceTemplate[] = [
   {
     name: 'Corner L-4',
     shape: [
-      [1, 0, 0],
-      [1, 0, 0],
-      [1, 1, 0]
+      [1, 0],
+      [1, 0],
+      [1, 1]
     ],
     colorClass: 'from-[#64d2ff] to-[#2193fb]',
     symbol: 'L'
@@ -98,9 +98,9 @@ export const PIECE_TEMPLATES: PieceTemplate[] = [
   {
     name: 'Corner L-4 Inverted',
     shape: [
-      [0, 0, 1],
-      [0, 0, 1],
-      [0, 1, 1]
+      [0, 1],
+      [0, 1],
+      [1, 1]
     ],
     colorClass: 'from-[#64d2ff] to-[#2193fb]',
     symbol: '⅃'
