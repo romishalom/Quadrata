@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #131315;
+  --color-surface-dim: #131315;
+  --color-surface-bright: #39393b;
+  --color-surface-container-lowest: #0e0e10;
+  --color-surface-container-low: #1b1b1d;
+  --color-surface-container: #1f1f21;
+  --color-surface-container-high: #2a2a2c;
+  --color-surface-container-highest: #353437;
+  --color-on-surface: #e4e2e4;
+  --color-on-surface-variant: #c1c6d5;
+  --color-surface-tile-dark: #272729;
+  --color-surface-tile-elevated: #2a2a2c;
+  --color-surface-tile-sunken: #252527;
+  --color-surface-black: #000000;
+  --color-primary: #aac7ff;
+  --color-on-primary: #002f65;
+  --color-primary-container: #0066cc;
+  --color-on-primary-container: #dfe8ff;
+  --color-secondary: #a3c9ff;
+  --color-secondary-container: #2193fb;
+  --color-tertiary: #abc7ff;
+  --color-tertiary-container: #0066ce;
+  --color-block-active-blue: #2997ff;
+  --color-block-accent-cyan: #64d2ff;
+  --color-block-accent-indigo: #5e5ce6;
+  --color-ghost-preview: rgba(41, 151, 255, 0.28);
+  --color-cell-empty: rgba(255, 255, 255, 0.04);
+  --color-cell-grid-line: rgba(255, 255, 255, 0.07);
+  --color-cell-subgrid-line: rgba(255, 255, 255, 0.16);
+  --color-text-on-dark: #ffffff;
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+  --color-on-error-container: #ffdad6;
+  --color-outline: #8b919e;
+  --color-outline-variant: #414753;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #131315;
+    color: #e4e2e4;
+    overscroll-behavior: none;
+  }
+}
+
+/* Tabular numbers for all stats & timers */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Cell animation when clearing */
+@keyframes cell-flash {
+  0% {
+    filter: brightness(2.2);
+    transform: scale(1.08);
+  }
+  50% {
+    filter: brightness(1.6);
+    opacity: 0.8;
+  }
+  100% {
+    filter: brightness(1);
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+.animate-cell-clear {
+  animation: cell-flash 350ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Subtle board vibration on mega clear */
+@keyframes board-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-1.5px, 1.5px); }
+  40% { transform: translate(1.5px, -1.5px); }
+  60% { transform: translate(-1px, -1px); }
+  80% { transform: translate(1px, 1px); }
+}
+
+.animate-board-shake {
+  animation: board-shake 240ms ease-out;
+}
+
+/* Floating piece drag glow */
+.piece-dragging {
+  cursor: grabbing;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.65));
+  touch-action: none;
+}
+
+/* Hide default scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

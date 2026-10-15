@@ -1,0 +1,6 @@
+{
+  "name": "Quadrata",
+  "description": "Architectural 9x9 geometric block puzzle with Sudoku sub-quadrant mechanics, fluid drag-and-drop physics, multiple game modes, and audio synthesis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
