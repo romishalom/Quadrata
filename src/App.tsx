@@ -19,7 +19,7 @@ export default function App() {
 
   // Application Settings
   const [settings, setSettings] = useState<SettingsState>(() => {
-    let savedRack: 'bottom' | 'left' | 'right' = 'right';
+    let savedRack: 'bottom' | 'left' | 'right' = 'left';
     let savedBindings: KeyBindingsConfig = { ...DEFAULT_KEY_BINDINGS };
 
     if (typeof localStorage !== 'undefined') {
@@ -39,14 +39,14 @@ export default function App() {
     return {
       theme: 'classic',
       superzoneStyle: 'high-contrast',
-      burstParticles: true,
+      burstParticles: false,
       boardShake: false,
       springDrag: true,
-      sfxVolume: 82,
-      ambientSound: 'rain',
+      sfxVolume: 80,
+      ambientSound: 'silent',
       tapToPlace: false,
       ghostHologram: true,
-      colorblindAssist: true,
+      colorblindAssist: false,
       hapticEnabled: true,
       rackPosition: savedRack,
       keyBindings: savedBindings
